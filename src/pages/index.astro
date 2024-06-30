@@ -73,7 +73,7 @@ const computedTitle = title ? `${title} | Briskett` : "Briskett";
 
 	const checkNodeStatuses = () => {
 		fetch(
-			`${import.meta.env.PUBLIC_TAQUITO_RPC_URL}/chains/main/blocks/head/hash`
+			`https://mainnet.ecadinfra.com/chains/main/blocks/head/hash`
 		)
 			.then((r) => {
 				if (r.ok) {
@@ -86,9 +86,9 @@ const computedTitle = title ? `${title} | Briskett` : "Briskett";
 				$rpcNodeOnline.set(false);
 			});
 
-		fetch(`${import.meta.env.PUBLIC_TZPRO_URL}/explorer/tip`, {
+		fetch(`https://api.tzpro.io/explorer/tip`, {
 			headers: {
-				"X-API-Key": $tzProKey.get() || import.meta.env.PUBLIC_TZPRO_API_KEY
+				"X-API-Key": $tzProKey.get() || "8KH89EH6WDLFBSZR4KQODW1F5KZFTPC"
 			}
 		})
 			.then((r) => {

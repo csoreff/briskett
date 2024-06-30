@@ -25,12 +25,10 @@ export function loadConnectedAccountData() {
 	});
 
 	fetch(
-		`${
-			import.meta.env.PUBLIC_TZPRO_URL
-		}/explorer/account/${$connectedAddress.get()}/operations?order=desc`,
+		`https://api.tzpro.io/explorer/account/${$connectedAddress.get()}/operations?order=desc`,
 		{
 			headers: {
-				"X-API-Key": $tzProKey.get() || import.meta.env.PUBLIC_TZPRO_API_KEY,
+				"X-API-Key": $tzProKey.get() || "8KH89EH6WDLFBSZR4KQODW1F5KZFTPC",
 			},
 		},
 	)
